@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Suggested Jobs</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="mt-5">Suggested Jobs</h1>
+  <ul class="list-group mt-3">
+    <li th:each="job : ${suggestedJobs}" class="list-group-item">
+      <a th:href="@{/jobs/{id}(id=${job.id})}" th:text="${job.jobName}">Job Name</a>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

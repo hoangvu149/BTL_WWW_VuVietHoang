@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Suggested Skills</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Suggested Skills</h1>
+    <ul class="list-group mt-3">
+        <li th:each="skill : ${suggestedSkills}" class="list-group-item" th:text="${skill.name}">Skill</li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Skill List</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Skill List</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="skill : ${skills}">
+      <td th:text="${skill.id}"></td>
+      <td th:text="${skill.skillName}"></td>
+      <td>
+        <form th:action="@{/skills/{id}(id=${skill.id})}" method="post">
+          <input type="hidden" name="_method" value="delete"/>
+          <a th:href="@{/skills/delete/{id}(id=${skill.id})}" class="btn btn-danger">Delete</a>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <a href="/skills/create" class="btn btn-success">Create New Skill</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Job Detail</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="mt-5" th:text="${job.jobName}">Job Name</h1>
+  <p><strong>Description:</strong> <span th:text="${job.jobDesc}">Job Description</span></p>
+  <h2>Skills</h2>
+  <ul class="list-group mt-3">
+    <li th:each="skill : ${job.skills}" class="list-group-item" th:text="${skill.skill.name}">Skill</li>
+  </ul>
+  <a th:href="@{/jobs/edit/{id}(id=${job.jobId})}" class="btn btn-warning mt-3">Edit</a>
+  <a th:href="@{/jobs/delete/{id}(id=${job.jobId})}" class="btn btn-danger mt-3">Delete</a>
+</div>
+</body>
+</html>

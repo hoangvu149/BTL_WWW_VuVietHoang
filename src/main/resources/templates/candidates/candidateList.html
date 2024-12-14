@@ -27,10 +27,6 @@
       <td th:text="${candidate.address}"></td>
       <td th:text="${candidate.phone}"></td>
       <td th:text="${candidate.email}"></td>
-      <td>
-        <a th:href="@{/candidates/edit/{id}(id=${candidate.id})}" class="btn btn-warning">Edit</a>
-        <a th:href="@{/candidates/delete/{id}(id=${candidate.id})}" class="btn btn-danger">Delete</a>
-      </td>
     </tr>
     </tbody>
   </table>
